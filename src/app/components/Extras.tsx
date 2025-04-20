@@ -32,19 +32,21 @@ export default function Etapa4({
           <input
             type="checkbox"
             checked={formData.periculosidade}
-            onChange={(e) =>
-              updateFormData({ periculosidade: e.target.checked })
-            }
+            onChange={e => updateFormData({ periculosidade: e.target.checked })}
             className="w-5 h-5"
           />
         </div>
 
         <div>
-          <label className="block text-gray-700 mb-1">📌 Tipo de aviso prévio:</label>
+          <label className="block text-gray-700 mb-1">
+            📌 Tipo de aviso prévio:
+          </label>
           <select
             className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             value={formData.avisoPrevio}
-            onChange={(e) => updateFormData({ avisoPrevio: e.target.value })}
+            onChange={e =>
+              updateFormData({ avisoPrevio: e.target.value as 'indenizado' })
+            }
           >
             <option value="">Selecione</option>
             <option value="indenizado">Indenizado</option>
@@ -54,13 +56,13 @@ export default function Etapa4({
         </div>
 
         <div className="flex items-center justify-between">
-          <label className="text-gray-700">💰 FGTS foi recolhido normalmente?</label>
+          <label className="text-gray-700">
+            💰 FGTS foi recolhido normalmente?
+          </label>
           <input
             type="checkbox"
             checked={formData.fgtsRecolhido}
-            onChange={(e) =>
-              updateFormData({ fgtsRecolhido: e.target.checked })
-            }
+            onChange={e => updateFormData({ fgtsRecolhido: e.target.checked })}
             className="w-5 h-5"
           />
         </div>
