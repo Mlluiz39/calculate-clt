@@ -6,12 +6,12 @@ export default function Apresentacao({ onStart }: { onStart: () => void }) {
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-b from-[#eaf2ff] to-white p-4">
       <div className="bg-white rounded-[32px] shadow-xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-10 max-w-4xl w-full">
         <Image
-          src="/mascote.svg" // <- essa imagem precisa estar isolada
+          src="/mascote.svg"
           alt="Mascote CLT"
           width={180}
           height={180}
-          className="w-72 h-auto"
           priority
+          className="w-[180px] h-[180px] md:w-[250px] md:h-[250px] lg:w-[300px] lg:h-[300px] object-contain"
         />
 
         <div className="text-center md:text-left">

@@ -1,5 +1,5 @@
 'use client'
-
+import dynamic from 'next/dynamic'
 import { useState } from 'react'
 import { FormData } from '../types/FormData'
 import { initialFormData } from '../types/constants'
@@ -8,7 +8,10 @@ import Contrato from './Contrato'
 import Remuneracao from './Remuneracao'
 import FeriasDecimoTerceiro from './FeriasDecimoTerceiro'
 import Extras from './Extras'
-import ResultadoFinal from './ResultadoFinal'
+
+const ResultadoFinal = dynamic(() => import('./ResultadoFinal'), {
+  ssr: false, // ou loading: () => <div>Carregando...</div>
+})
 
 export default function FormWrapper() {
   const [step, setStep] = useState(1)
